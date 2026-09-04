@@ -1,0 +1,382 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #120018, #35002f, #16001f);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Card */
+.container {
+    width: 90%;
+    max-width: 850px;
+    padding: 50px 25px;
+    text-align: center;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 0 50px rgba(255, 0, 128, 0.3);
+    position: relative;
+    z-index: 5;
+}
+
+.small {
+    color: #ff9bd2;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(45px, 9vw, 90px);
+    background: linear-gradient(90deg, #ff5ca8, #fff, #ff79b9);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px #ff4da6);
+    }
+    to {
+        filter: drop-shadow(0 0 25px #ff4da6);
+    }
+}
+
+.subtitle {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.message {
+    max-width: 650px;
+    margin: 25px auto;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #f8dceb;
+}
+
+/* Cake */
+.cake {
+    position: relative;
+    width: 180px;
+    height: 130px;
+    margin: 35px auto 25px;
+}
+
+.layer {
+    position: absolute;
+    width: 180px;
+    height: 55px;
+    border-radius: 15px;
+    background: linear-gradient(#ff78b7, #d62d75);
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 8px 20px rgba(255,0,120,.3);
+}
+
+.layer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    background: #fff0f7;
+    top: 10px;
+    border-radius: 50%;
+}
+
+.layer2 {
+    position: absolute;
+    width: 145px;
+    height: 45px;
+    left: 18px;
+    bottom: 45px;
+    border-radius: 12px;
+    background: #ff4d9d;
+}
+
+.candle {
+    position: absolute;
+    width: 15px;
+    height: 45px;
+    background: #fff;
+    left: 82px;
+    bottom: 90px;
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    width: 18px;
+    height: 28px;
+    background: #ffd166;
+    border-radius: 50% 50% 50% 50%;
+    left: 80px;
+    bottom: 130px;
+    box-shadow: 0 0 25px #ffb703;
+    animation: flame 0.7s infinite alternate;
+}
+
+@keyframes flame {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Button */
+button {
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff267f, #ff69b4);
+    box-shadow: 0 8px 25px rgba(255, 38, 127, .4);
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 35px rgba(255, 38, 127, .7);
+}
+
+.love {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #ffb5dc;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #c99ab8;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatUp linear forwards;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(.8);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 15px;
+    top: -20px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: .8;
+    }
+}
+
+#secret {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 105, 180, .12);
+    color: #ffd9ec;
+    font-size: 18px;
+    line-height: 1.7;
+    animation: appear .8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="small">FOR THE MAN I LOVE ❤️</div>
+
+    <h1>Happy Birthday!</h1>
+
+    <div class="subtitle">
+        To My Lovely Hubby 💕
+    </div>
+
+    <div class="cake">
+        <div class="flame"></div>
+        <div class="candle"></div>
+        <div class="layer2"></div>
+        <div class="layer"></div>
+    </div>
+
+    <p class="message">
+        Happy Birthday to the most special person in my life. ❤️
+        <br><br>
+        You are not just my husband, you are my best friend,
+        my safe place, my happiness and my favorite person.
+        Every moment with you makes my life more beautiful.
+        <br><br>
+        May your birthday bring you all the happiness,
+        success and love that your heart deserves.
+        I am so lucky to have you in my life.
+        💕
+    </p>
+
+    <button onclick="celebrate()">
+        🎉 Click For Your Surprise 🎉
+    </button>
+
+    <div id="secret">
+        💖 My Love, I choose you today, tomorrow and every day after. 💖
+        <br>
+        No matter where life takes us, I will always be by your side.
+        <br><br>
+        <strong>Happy Birthday, My Forever Love! ❤️</strong>
+    </div>
+
+    <div class="love">
+        Forever Yours ❤️
+    </div>
+
+    <div class="footer">
+        Made with endless love 💗
+    </div>
+
+</div>
+
+<script>
+
+/* Confetti */
+function createConfetti() {
+
+    for (let i = 0; i < 180; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.style.left = Math.random() * 100 + "vw";
+
+        confetti.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        confetti.style.transform =
+            "rotate(" + Math.random() * 360 + "deg)";
+
+        confetti.style.background =
+            ["#ff4d9d", "#ffd166", "#ffffff", "#ff85c8", "#c77dff"]
+            [Math.floor(Math.random() * 5)];
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 6000);
+    }
+}
+
+/* Floating Hearts */
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        ["❤️", "💕", "💖", "💗", "💘", "💞"]
+        [Math.floor(Math.random() * 6)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (Math.random() * 5 + 5) + "s";
+
+    heart.style.fontSize =
+        (Math.random() * 20 + 18) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+/* Surprise Button */
+function celebrate() {
+
+    document.getElementById("secret").style.display = "block";
+
+    createConfetti();
+
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+/* Start Background Hearts */
+setInterval(createHeart, 700);
+
+/* Initial Confetti */
+window.onload = function() {
+    setTimeout(createConfetti, 500);
+};
+
+</script>
+
+</body>
+</html>
+```
